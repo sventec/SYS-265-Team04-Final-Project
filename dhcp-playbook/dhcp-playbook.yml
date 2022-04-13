@@ -1,5 +1,6 @@
 ---
 - hosts: dhcp01-fosc.fosc.local
+  become: yes
   tasks:
   - name: Copy dhcpd config to DHCP1
     copy:
@@ -8,6 +9,7 @@
       mode: '0600'
 
 - hosts: dhcp02-fosc.fosc.local
+  become: yes
   tasks:
   - name: Copy dhcpd config to DHCP2
     copy:
@@ -16,10 +18,11 @@
       mode: '0600'
 
 - hosts: dhcp
+  become: yes
   tasks:
   - name: Install/update dhcpd
     yum:
-      name: dhcpd
+      name: dhcp
       state: latest
   - name: Start dhcpd service
     service:
