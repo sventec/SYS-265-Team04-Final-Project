@@ -24,6 +24,12 @@
     yum:
       name: dhcp
       state: latest
+  - name: Allow dhcp through firewall
+    firewalld:
+      service: dhcp
+      permanent: yes
+      state: enabled
+      immediate: yes
   - name: Start dhcpd service
     service:
       name: dhcpd
