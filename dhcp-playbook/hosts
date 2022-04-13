@@ -1,7 +1,3 @@
 [dhcp]
-172.16.1.10
-172.16.1.11
-[dhcp1]
-172.16.1.10
-[dhcp2]
-172.16.1.11
+dhcp1.fosc.local
+dhcp2.fosc.local
