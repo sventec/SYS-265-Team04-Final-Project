@@ -13,7 +13,7 @@
   - name: Create a Windows user account
     raw: New-ADUser -Name "AnsibleUser"
 
-- hosts: docker-fosc
+- hosts: docker01-fosc
   become: yes
   tasks:
   - name: Install an apt package
