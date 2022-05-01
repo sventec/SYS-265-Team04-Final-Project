@@ -13,7 +13,7 @@ ansible_shell_type=powershell
 util-fosc
 
 [docker]
-docker-fosc
+docker01-fosc
 
 [docker:vars]
 ansible_user=deployer
