@@ -11,11 +11,7 @@
 - hosts: dc01-fosc
   tasks:
   - name: Create a Windows user account
-    win_user:
-      name: ansibleuser
-      state: present
-      groups:
-        - Users
+    raw: New-ADUser -Name "AnsibleUser"
 
 - hosts: docker-fosc
   become: yes
