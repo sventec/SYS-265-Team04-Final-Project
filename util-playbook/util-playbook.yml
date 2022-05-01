@@ -1,6 +1,7 @@
 ---
 - name: Configure Apache on util
   hosts: util-fosc
+  become: true
   tasks:
     - name: Install Apache
       yum:
