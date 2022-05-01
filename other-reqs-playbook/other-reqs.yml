@@ -1,0 +1,26 @@
+---
+- hosts: util-fosc
+  become: yes
+  tasks:
+  - name: Create a Linux user account
+    user:
+      name: ansibleuser
+      shell: /bin/bash
+      password: $6$vh451cjLeOFk9$CU5Zn1xOQCdjB/dkvJMoVOTsUEKmAhOGrKqUi72NHhvXnV1hl8Hto8z5i.98xpU61Sbo.8/bJ85gfqF2nUE4T0
+
+- hosts: dc01-fosc
+  tasks:
+  - name: Create a Windows user account
+    win_user:
+      name: ansibleuser
+      state: present
+      groups:
+        - Users
+
+- hosts: docker-fosc
+  become: yes
+  tasks:
+  - name: Install an apt package
+    apt:
+     name: sudo
+     state: latest
