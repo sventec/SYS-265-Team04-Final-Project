@@ -1,6 +1,13 @@
+[windows]
 dc01-fosc
 dc02-fosc
 mgmt01-fosc
-util-fosc
 dfs01-fosc
 dfs02-fosc
+
+[windows:vars]
+ansible_user=deployer
+ansible_shell_type=powershell
+
+[linux]
+util-fosc
