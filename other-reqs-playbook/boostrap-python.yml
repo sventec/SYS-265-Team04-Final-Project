@@ -9,3 +9,6 @@
 
   - name: Remove Python installer
     raw: Remove-Item .\python-3.10.4-amd64.exe
+
+  - name: Refresh environment variables
+    raw: $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User") 
